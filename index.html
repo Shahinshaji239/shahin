@@ -196,8 +196,16 @@
                         <div class="absolute inset-0 -rotate-3 wobbly-border overflow-hidden">
                             <img alt="Mohammed Shahin"
                                 class="w-full h-full object-cover scale-[1.35] grayscale hover:grayscale-0 transition-all duration-500"
-                                data-alt="Mohammed Shahin Portrait"
-                                src="https://ik.imagekit.io/td5ykows9/Untitled%20design.jpg" />
+                                id="hero-portrait-img"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+                                data-src="https://ik.imagekit.io/td5ykows9/Untitled%20design.jpg" />
+                            <script>
+                                // Hide from WhatsApp scraper by loading src after HTML parse
+                                document.addEventListener("DOMContentLoaded", function() {
+                                    const img = document.getElementById("hero-portrait-img");
+                                    img.src = img.getAttribute("data-src");
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
