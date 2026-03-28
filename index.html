@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mohammed Shahin | Full Stack Developer</title>
+    <link rel="icon" type="image/png"
+        href="https://ik.imagekit.io/td5ykows9/ChatGPT%20Image%20Mar%2028,%202026,%2010_45_46%20PM.png" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Architects+Daughter&amp;family=Epilogue:wght@400;700;900&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;family=Space+Grotesk:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#f6f6f6",
+                        "primary-dim": "#585100",
+                        "surface-container-low": "#f0f1f1",
+                        "on-tertiary-fixed-variant": "#005762",
+                        "on-primary-fixed-variant": "#675e00",
+                        "on-primary-container": "#5d5400",
+                        "surface-dim": "#d2d5d5",
+                        "secondary": "#b30066",
+                        "on-tertiary-container": "#004d57",
+                        "on-secondary-fixed": "#6b003b",
+                        "primary-fixed": "#fde800",
+                        "on-secondary": "#ffeff2",
+                        "inverse-on-surface": "#9c9d9d",
+                        "tertiary-dim": "#005863",
+                        "surface-container": "#e7e8e8",
+                        "on-tertiary": "#d8f8ff",
+                        "outline-variant": "#acadad",
+                        "primary-fixed-dim": "#edda00",
+                        "on-secondary-container": "#8e0050",
+                        "tertiary-fixed-dim": "#00d4ec",
+                        "surface-tint": "#665d00",
+                        "surface-variant": "#dbdddd",
+                        "error-container": "#f95630",
+                        "on-secondary-fixed-variant": "#9f005a",
+                        "error-dim": "#b92902",
+                        "primary": "#665d00",
+                        "on-error": "#ffefec",
+                        "surface": "#f6f6f6",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#003840",
+                        "surface-container-highest": "#dbdddd",
+                        "surface-bright": "#f6f6f6",
+                        "secondary-fixed-dim": "#ffacc9",
+                        "outline": "#767777",
+                        "on-primary": "#fff4ad",
+                        "on-error-container": "#520c00",
+                        "on-surface": "#2d2f2f",
+                        "error": "#b02500",
+                        "on-surface-variant": "#5a5c5c",
+                        "on-primary-fixed": "#494200",
+                        "primary-container": "#fde800",
+                        "inverse-surface": "#0c0f0f",
+                        "inverse-primary": "#fde800",
+                        "on-background": "#2d2f2f",
+                        "secondary-container": "#ffc1d5",
+                        "tertiary-fixed": "#00e3fd",
+                        "secondary-dim": "#9d0059",
+                        "surface-container-high": "#e1e3e3",
+                        "tertiary": "#006571",
+                        "secondary-fixed": "#ffc1d5",
+                        "tertiary-container": "#00e3fd"
+                    },
+                    fontFamily: {
+                        "headline": ["Architects Daughter"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Space Grotesk"],
+                        "sketch": ["Architects Daughter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .scribble-shadow {
+            box-shadow: 8px 8px 0px rgba(45, 47, 47, 1);
+        }
+
+        .scribble-shadow-hover:hover {
+            box-shadow: 4px 4px 0 0 rgba(45, 47, 47, 1);
+            transform: translate(4px, 4px);
+        }
+
+        .wobbly-border {
+            border: 3px solid #2d2f2f;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+
+        .wobbly-card {
+            border: 2px solid #2d2f2f;
+            border-radius: 12px 45px 15px 30px/30px 15px 45px 12px;
+        }
+
+        .hand-drawn-line {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='4' viewBox='0 0 100 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 2C10 1.5 20 2.5 30 2C45 1 60 3 75 2C85 1.5 95 2.5 99 2' stroke='%232d2f2f' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            height: 4px;
+        }
+
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container">
+    <!-- TopNavBar -->
+    <nav
+        class="sticky top-0 z-50 bg-[#f6f6f6] dark:bg-zinc-900 w-full border-b-4 border-[#2d2f2f] dark:border-zinc-100 rounded-b-[1.5rem] shadow-[8px_4px_0px_rgba(45,47,47,0.15)] dark:shadow-[8px_4px_0px_rgba(255,255,255,0.05)]">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <div
+                class="text-2xl font-black text-[#2d2f2f] dark:text-zinc-100 hover:rotate-1 transition-transform font-sketch tracking-wide">
+                Mohammed Shahin
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-sketch">
+                <a class="text-[#2d2f2f]/70 dark:text-zinc-400 hover:text-[#2d2f2f] hover:bg-[#ffc1d5] hover:scale-105 transition-all duration-200 px-2 py-1 rounded"
+                    href="#about">About</a>
+                <a class="text-[#2d2f2f]/70 dark:text-zinc-400 hover:text-[#2d2f2f] hover:bg-[#ffc1d5] hover:scale-105 transition-all duration-200 px-2 py-1 rounded"
+                    href="#experience">Experience</a>
+                <a class="text-[#2d2f2f]/70 dark:text-zinc-400 hover:text-[#2d2f2f] hover:bg-[#ffc1d5] hover:scale-105 transition-all duration-200 px-2 py-1 rounded"
+                    href="#education">Education</a>
+                <a class="text-[#2d2f2f]/70 dark:text-zinc-400 hover:text-[#2d2f2f] hover:bg-[#ffc1d5] hover:scale-105 transition-all duration-200 px-2 py-1 rounded"
+                    href="#skills">Skills</a>
+                <a class="text-[#2d2f2f]/70 dark:text-zinc-400 hover:text-[#2d2f2f] hover:bg-[#ffc1d5] hover:scale-105 transition-all duration-200 px-2 py-1 rounded"
+                    href="#projects">Projects</a>
+                <a class="text-[#2d2f2f]/70 dark:text-zinc-400 hover:text-[#2d2f2f] hover:bg-[#ffc1d5] hover:scale-105 transition-all duration-200 px-2 py-1 rounded"
+                    href="#contact">Contact</a>
+            </div>
+            <div class="flex items-center gap-4 flex-shrink-0">
+                <a class="bg-primary-container text-on-primary-container font-sketch font-bold px-4 py-1.5 wobbly-border scribble-shadow scribble-shadow-hover transition-all text-sm uppercase mr-2"
+                    href="cv.pdf" download="Mohammed_Shahin_CV.pdf">
+                    Download CV
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main class="w-full">
+        <!-- Hero Section -->
+        <section class="w-full">
+            <div class="max-w-7xl mx-auto px-6 pt-20 pb-12 md:pt-32 md:pb-16 grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h1 class="text-6xl md:text-8xl font-sketch font-bold leading-tight text-on-surface">MOHAMMED SHAHIN
+                    </h1>
+                    <p class="text-xl md:text-2xl font-body max-w-lg leading-relaxed text-on-surface-variant italic">
+                        I build digital experiences with the precision of an architect and the soul of a sketch artist.
+                        Solving complex problems through intentional design and clean code.
+                    </p>
+                    <div class="flex flex-col gap-6">
+                        <a href="#contact"
+                            class="bg-primary-container text-on-primary-container font-headline text-2xl px-10 py-4 wobbly-border scribble-shadow scribble-shadow-hover transition-all font-black uppercase w-fit text-center">
+                            Let's Talk
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center md:justify-end">
+                    <div class="w-72 h-72 md:w-[450px] md:h-[450px] relative">
+                        <div class="absolute inset-0 bg-secondary-container rotate-3 wobbly-border"></div>
+                        <div class="absolute inset-0 -rotate-3 wobbly-border overflow-hidden">
+                            <img alt="Mohammed Shahin"
+                                class="w-full h-full object-cover scale-[1.35] grayscale hover:grayscale-0 transition-all duration-500"
+                                data-alt="Mohammed Shahin Portrait"
+                                src="https://ik.imagekit.io/td5ykows9/Untitled%20design.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Full Width Cyan Marquee positioned directly under button content block -->
+            <div
+                class="overflow-hidden border-y-4 border-on-surface bg-tertiary-container rotate-[-1deg] py-1.5 w-full marquee z-10 relative">
+                <div
+                    class="marquee-content flex gap-12 text-xl font-headline font-black uppercase text-on-tertiary-container">
+                    <span>Building Digital Dreams</span>
+                    <span>•</span>
+                    <span>Creative Problem Solving</span>
+                    <span>•</span>
+                    <span>Code is Art</span>
+                    <span>•</span>
+                    <span>Sketching the Future</span>
+                    <span>•</span>
+                    <span>Building Digital Dreams</span>
+                    <span>•</span>
+                    <span>Creative Problem Solving</span>
+                    <span>•</span>
+                    <span>Code is Art</span>
+                    <span>•</span>
+                    <span>Sketching the Future</span>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="my-24 w-full max-w-7xl mx-auto px-6" id="about">
+            <h2 class="text-5xl font-headline font-black mb-12 uppercase relative inline-block">
+                About Me
+                <div class="hand-drawn-line w-full absolute -bottom-2"></div>
+            </h2>
+            <p class="text-xl font-body leading-relaxed text-on-surface-variant italic mb-8">
+                I build digital experiences where logic meets creativity.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-surface-container-lowest p-8 wobbly-card scribble-shadow rotate-1">
+                    <p class="font-body text-on-surface leading-relaxed">
+                        As a <span class="font-bold text-on-surface">Full Stack Developer</span> working with
+                        <span class="font-bold text-secondary">Python, Django, and React</span>, I craft scalable
+                        web applications and seamless user interfaces backed by strong, secure systems. I don't just
+                        write code — I solve real problems with performance, clarity, and purpose in mind.
+                    </p>
+                </div>
+                <div class="bg-primary-container p-8 wobbly-card scribble-shadow -rotate-1">
+                    <p class="font-body text-on-primary-container leading-relaxed">
+                        Having worked with <span class="font-bold">international clients</span>, I understand how
+                        to turn ideas into production-ready products. My client-facing background helps me
+                        communicate, collaborate, and deliver solutions that actually work in the real world.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- My Toolbox -->
+        <section class="my-24 w-full max-w-7xl mx-auto px-6" id="skills">
+            <h2 class="text-5xl font-headline font-black mb-12 uppercase">My Toolbox</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <div
+                    class="bg-surface-container-lowest p-3 wobbly-card scribble-shadow rotate-1 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    React</div>
+                <div
+                    class="bg-primary-container p-3 wobbly-card scribble-shadow -rotate-2 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    JavaScript</div>
+                <div
+                    class="bg-surface-container-lowest p-3 wobbly-card scribble-shadow rotate-3 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    CSS</div>
+                <div
+                    class="bg-tertiary-container p-3 wobbly-card scribble-shadow -rotate-1 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    Bootstrap</div>
+                <div
+                    class="bg-surface-container-lowest p-3 wobbly-card scribble-shadow rotate-2 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    Python</div>
+                <div
+                    class="bg-secondary-container p-3 wobbly-card scribble-shadow -rotate-3 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    Django</div>
+                <div
+                    class="bg-surface-container-lowest p-3 wobbly-card scribble-shadow rotate-1 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    PHP</div>
+                <div
+                    class="bg-primary-container p-3 wobbly-card scribble-shadow -rotate-2 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    MySQL</div>
+                <div
+                    class="bg-tertiary-container p-3 wobbly-card scribble-shadow rotate-2 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    PostgreSQL</div>
+                <div
+                    class="bg-surface-container-lowest p-3 wobbly-card scribble-shadow -rotate-1 text-center font-headline font-bold hover:scale-110 transition-transform">
+                    AWS</div>
+            </div>
+        </section>
+        <!-- Experience & Education (Timeline) -->
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-1 gap-16">
+            <!-- Professional Timeline -->
+            <section class="mb-32 w-full" id="experience">
+                <h2 class="font-headline text-4xl mb-12 relative inline-block">
+                    Professional Timeline
+                    <div class="hand-drawn-line w-full absolute -bottom-2"></div>
+                </h2>
+                <div
+                    class="space-y-16 relative before:absolute before:left-8 before:top-4 before:bottom-4 before:w-[3px] before:bg-on-surface before:border-dashed">
+                    <!-- Scellent Innovations -->
+                    <div class="relative pl-24 group">
+                        <div
+                            class="absolute left-6 top-2 w-5 h-5 bg-primary-container border-2 border-on-surface rounded-full z-10">
+                        </div>
+                        <div
+                            class="bg-surface-container-lowest p-8 wobbly-card scribble-shadow w-full transition-transform group-hover:-translate-y-2">
+                            <div class="flex flex-wrap items-center gap-4 mb-2">
+                                <span class="font-headline text-secondary font-bold uppercase">2025 June —
+                                    Present</span>
+                                <span
+                                    class="bg-primary-container text-on-primary-container font-headline text-xs font-bold px-3 py-1 wobbly-border uppercase tracking-wide">Scellent
+                                    Innovations</span>
+                            </div>
+                            <h3 class="font-headline text-2xl font-black mt-2">Junior Full Stack Web Developer</h3>
+                            <p class="font-body mt-4 text-on-surface-variant leading-relaxed">
+                                Building a UK-based AI-powered English-learning platform using <strong
+                                    class="text-on-surface">Django and React</strong>.
+                                Developing secure REST APIs, integrating real-time AI voice agents, managing VPS
+                                deployment with
+                                <strong class="text-on-surface">Nginx and Gunicorn</strong>, and designing scalable
+                                backend and frontend systems
+                                to deliver an interactive learning experience for children.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Mashupstack -->
+                    <div class="relative pl-24 group">
+                        <div
+                            class="absolute left-6 top-2 w-5 h-5 bg-secondary-container border-2 border-on-surface rounded-full z-10">
+                        </div>
+                        <div
+                            class="bg-surface-container-lowest p-8 wobbly-card scribble-shadow w-full transition-transform group-hover:rotate-1">
+                            <div class="flex flex-wrap items-center gap-4 mb-2">
+                                <span class="font-headline text-secondary font-bold uppercase">2024 Oct — 2025
+                                    May</span>
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container font-headline text-xs font-bold px-3 py-1 wobbly-border uppercase tracking-wide">Mashupstack</span>
+                            </div>
+                            <h3 class="font-headline text-2xl font-black mt-2">Full Stack Python with React Intern</h3>
+                            <p class="font-body mt-4 text-on-surface-variant leading-relaxed">
+                                Completed a 6-month full-time internship building an <strong class="text-on-surface">OTT
+                                    streaming platform</strong>
+                                using <strong class="text-on-surface">Python, Django, React, and REST APIs</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Education Section -->
+            <section class="mb-32 w-full" id="education">
+                <h2 class="font-headline text-4xl mb-12 relative inline-block">
+                    Education
+                    <div class="hand-drawn-line w-full absolute -bottom-2"></div>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12 w-full">
+                    <!-- University College Trivandrum -->
+                    <div class="p-8 wobbly-card scribble-shadow bg-surface-container-lowest rotate-1">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="material-symbols-outlined text-4xl text-primary">school</span>
+                            <div>
+                                <h4 class="font-headline text-xl font-bold">BA Arabic</h4>
+                                <p class="text-sm opacity-60">University College Trivandrum</p>
+                                <p class="text-xs font-headline font-bold text-secondary mt-1">2018 — 2021</p>
+                            </div>
+                        </div>
+                        <p class="font-body text-on-surface-variant">Completed a Bachelor's degree in Arabic Language
+                            &amp; Literature, building a strong foundation in linguistics, communication, and cultural
+                            studies.</p>
+                    </div>
+                    <!-- Mashupstack Certification -->
+                    <div class="p-8 wobbly-card scribble-shadow bg-surface-container-lowest -rotate-1">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="material-symbols-outlined text-4xl text-secondary">workspace_premium</span>
+                            <div>
+                                <h4 class="font-headline text-xl font-bold">Full Stack Developer Python with React</h4>
+                                <p class="text-sm opacity-60">Mashupstack</p>
+                                <p class="text-xs font-headline font-bold text-secondary mt-1">2024 — 2025</p>
+                            </div>
+                        </div>
+                        <p class="font-body text-on-surface-variant">Completed a 6-month intensive Full Stack
+                            Development course focusing on Python, Django, and React — gaining hands-on experience
+                            through real-world projects and modern development practices.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Blueprints (Projects) -->
+        <section class="py-24 bg-surface-container-low" id="projects">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 w-full">
+                    <div>
+                        <h2 class="text-6xl font-headline font-black uppercase leading-tight">Recent<br /><span
+                                class="text-secondary underline decoration-dashed underline-offset-8">Blueprints</span>
+                        </h2>
+                    </div>
+                    <p class="font-headline text-2xl font-bold max-w-sm text-right opacity-70">
+                        A collection of messy sketches turned into polished realities.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
+                    <!-- Project 1: AI Face Detection -->
+                    <div class="group">
+                        <div class="wobbly-border bg-white scribble-shadow scribble-shadow-hover transition-all p-2">
+                            <div
+                                class="aspect-video w-full overflow-hidden wobbly-border bg-surface-container mb-6 relative flex items-center justify-center">
+                                <img src="https://ik.imagekit.io/td5ykows9/ChatGPT%20Image%20Mar%2028,%202026,%2009_33_28%20AM.png"
+                                    alt="AI Face Detection Screenshot"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <div
+                                    class="absolute top-4 right-4 bg-primary-container z-10 px-3 py-1 font-headline font-bold wobbly-border rotate-3 scribble-shadow">
+                                    LIVE
+                                </div>
+                            </div>
+                            <div class="px-4 pb-4">
+                                <h3 class="text-3xl font-headline font-black uppercase mb-2">AI Face Detection</h3>
+                                <p class="mb-6 opacity-80 font-body">
+                                    An AI-powered face detection platform for events — instantly find your photos from
+                                    thousands of images using facial recognition.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="font-label text-xs uppercase tracking-widest text-secondary font-bold">AI
+                                        • Django • React • 2025</span>
+                                    <a href="https://event.professionalphotographers.co/" target="_blank"
+                                        class="wobbly-border px-4 py-1 font-headline font-bold hover:bg-on-surface hover:text-white transition-colors">VISIT_SITE
+                                        ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2: EMI Learn -->
+                    <div class="group md:mt-16">
+                        <div
+                            class="wobbly-border bg-white scribble-shadow scribble-shadow-hover transition-all p-2 -rotate-1">
+                            <div
+                                class="aspect-video w-full overflow-hidden wobbly-border bg-surface-container mb-6 relative flex items-center justify-center">
+                                <img src="https://ik.imagekit.io/td5ykows9/ChatGPT%20Image%20Mar%2028,%202026,%2009_38_10%20AM.png"
+                                    alt="EMI Learn Screenshot"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <div
+                                    class="absolute top-4 right-4 bg-tertiary-container px-3 py-1 z-10 font-headline font-bold wobbly-border -rotate-2 scribble-shadow">
+                                    LIVE
+                                </div>
+                            </div>
+                            <div class="px-4 pb-4">
+                                <h3 class="text-3xl font-headline font-black uppercase mb-2">EMI Learn</h3>
+                                <p class="mb-6 opacity-80 font-body">
+                                    An AI-powered English learning platform for young students in the UK — featuring an
+                                    interactive AI tutor and detailed progress reports for parents on every activity.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="font-label text-xs uppercase tracking-widest text-tertiary font-bold">AI
+                                        • Django • React • UK • 2025</span>
+                                    <a href="https://emilearn.com/" target="_blank"
+                                        class="wobbly-border px-4 py-1 font-headline font-bold hover:bg-on-surface hover:text-white transition-colors">VISIT_SITE
+                                        ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3: Interactive Digital Flipbook -->
+                    <div class="group">
+                        <div
+                            class="wobbly-border bg-white scribble-shadow scribble-shadow-hover transition-all p-2 rotate-1">
+                            <div
+                                class="aspect-video w-full overflow-hidden wobbly-border bg-surface-container mb-6 relative flex items-center justify-center">
+                                <img src="https://ik.imagekit.io/td5ykows9/ChatGPT%20Image%20Mar%2028,%202026,%2009_40_25%20AM.png"
+                                    alt="Interactive Digital Flipbook Screenshot"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <div
+                                    class="absolute top-4 right-4 bg-primary-container text-on-primary-container z-10 px-3 py-1 font-headline font-bold wobbly-border rotate-2 scribble-shadow">
+                                    LIVE
+                                </div>
+                            </div>
+                            <div class="px-4 pb-4">
+                                <h3 class="text-3xl font-headline font-black uppercase mb-2">Interactive Digital
+                                    Flipbook</h3>
+                                <p class="mb-6 opacity-80 font-body">
+                                    Built an interactive flipbook-based advertisement website with smooth animations and
+                                    a magazine-style user experience for showcasing promotional content for Shoppers
+                                    Stop.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="font-label text-xs uppercase tracking-widest text-primary font-bold">React
+                                        • Animations • UI/UX</span>
+                                    <a href="https://shoppershopoffer.netlify.app/" target="_blank"
+                                        class="wobbly-border px-4 py-1 font-headline font-bold hover:bg-on-surface hover:text-white transition-colors">VISIT_SITE
+                                        ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 4: Lavida Holidays -->
+                    <div class="group md:mt-16">
+                        <div
+                            class="wobbly-border bg-white scribble-shadow scribble-shadow-hover transition-all p-2 -rotate-1">
+                            <div
+                                class="aspect-video w-full overflow-hidden wobbly-border bg-surface-container mb-6 relative flex items-center justify-center">
+                                <img src="https://ik.imagekit.io/td5ykows9/ChatGPT%20Image%20Mar%2028,%202026,%2009_42_33%20AM.png"
+                                    alt="Lavida Holidays Screenshot"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                <div
+                                    class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container z-10 px-3 py-1 font-headline font-bold wobbly-border -rotate-2 scribble-shadow">
+                                    LIVE
+                                </div>
+                            </div>
+                            <div class="px-4 pb-4">
+                                <h3 class="text-3xl font-headline font-black uppercase mb-2">Lavida Holidays</h3>
+                                <p class="mb-6 opacity-80 font-body">
+                                    Designed and developed a responsive travel agency website for Lavida Holidays,
+                                    offering seamless navigation, dynamic destination showcases, and an engaging user
+                                    experience.
+                                </p>
+                                <div class="flex justify-between items-center">
+                                    <span
+                                        class="font-label text-xs uppercase tracking-widest text-tertiary font-bold">Web
+                                        Dev • UI/UX • Travel</span>
+                                    <a href="https://lavidaholidays.com/" target="_blank"
+                                        class="wobbly-border px-4 py-1 font-headline font-bold hover:bg-on-surface hover:text-white transition-colors">VISIT_SITE
+                                        ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="mb-32 w-full pt-24" id="contact">
+            <h2 class="text-6xl font-headline font-black uppercase mb-12 text-center">Contact Me</h2>
+            <div class="wobbly-border p-8 md:p-12 bg-white scribble-shadow max-w-4xl mx-auto rotate-1">
+                <form class="space-y-8 contact_form" action="https://formspree.io/f/mvgayrkv" method="post">
+                    <div>
+                        <label class="font-headline text-2xl font-bold mb-2 block" for="name">Name</label>
+                        <input
+                            class="w-full bg-stone-50 wobbly-border px-4 py-3 font-body focus:outline-none focus:ring-2 focus:ring-primary-container transition-all"
+                            id="name" name="name" placeholder="Who are you?" type="text" required />
+                    </div>
+                    <div>
+                        <label class="font-headline text-2xl font-bold mb-2 block" for="email">Email</label>
+                        <input
+                            class="w-full bg-stone-50 wobbly-border px-4 py-3 font-body focus:outline-none focus:ring-2 focus:ring-primary-container transition-all"
+                            id="email" name="email" placeholder="Where can I reach you?" type="email" required />
+                    </div>
+                    <div>
+                        <label class="font-headline text-2xl font-bold mb-2 block" for="message">Message</label>
+                        <textarea
+                            class="w-full bg-stone-50 wobbly-border px-4 py-3 font-body min-h-[150px] focus:outline-none focus:ring-2 focus:ring-primary-container transition-all"
+                            id="message" name="message" placeholder="What's the big idea?" required></textarea>
+                    </div>
+                    <div class="pt-4 text-center">
+                        <button
+                            class="bg-primary-container text-on-primary-container font-headline text-3xl px-12 py-5 wobbly-border scribble-shadow scribble-shadow-hover transition-all font-black uppercase"
+                            type="submit">
+                            SEND MESSAGE
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-[#f0f1f1] dark:bg-zinc-800 w-full border-t-4 border-[#2d2f2f] dark:border-zinc-100 mt-20 py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div
+            class="flex flex-col text-center md:text-left border-b-2 md:border-b-0 border-[#2d2f2f]/10 pb-4 md:pb-0 w-full md:w-auto">
+            <div class="font-bold text-[#2d2f2f] dark:text-zinc-100 font-sketch text-2xl">
+                Mohammed Shahin
+            </div>
+            <div class="font-sketch text-lg opacity-70 mt-1 dark:text-zinc-300 text-[#2d2f2f]">
+                From concept to deployment.
+            </div>
+        </div>
+        <div
+            class="font-['Architects_Daughter'] text-sm italic text-[#2d2f2f] dark:text-zinc-400 opacity-80 py-4 md:py-0 text-center w-full md:w-auto">
+            © 2026 Mohammed Shahin
+        </div>
+        <div class="flex gap-4 md:gap-6 flex-wrap justify-center font-bold text-lg w-full md:w-auto pt-2 md:pt-0">
+            <a class="text-[#2d2f2f] dark:text-zinc-300 hover:text-[#f95630] hover:-skew-x-6 hover:-translate-y-1 transition-all font-sketch"
+                href="https://github.com/Shahinshaji239" target="_blank">GitHub</a>
+            <a class="text-[#2d2f2f] dark:text-zinc-300 hover:text-[#f95630] hover:-skew-x-6 hover:-translate-y-1 transition-all font-sketch"
+                href="https://www.linkedin.com/in/shahin23/" target="_blank">LinkedIn</a>
+            <a class="text-[#2d2f2f] dark:text-zinc-300 hover:text-[#f95630] hover:-skew-x-6 hover:-translate-y-1 transition-all font-sketch"
+                href="mailto:shahinshaji239@gmail.com">Email</a>
+            <a class="text-[#2d2f2f] dark:text-zinc-300 hover:text-[#f95630] hover:-skew-x-6 hover:-translate-y-1 transition-all font-sketch"
+                href="https://www.instagram.com/sh__ahi_/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal"
+        class="hidden fixed inset-0 z-[100] flex items-center justify-center bg-[#2d2f2f]/80 backdrop-blur-sm px-4">
+        <div
+            class="bg-surface-container-lowest p-8 md:p-12 wobbly-border scribble-shadow max-w-md w-full text-center transform -rotate-1">
+            <span class="material-symbols-outlined text-6xl text-tertiary mb-4">check_circle</span>
+            <h3 class="font-headline text-3xl font-black uppercase mb-4 text-on-surface">Message Sent!</h3>
+            <p class="font-body text-on-surface-variant mb-8">Thanks for reaching out! I'll get back to you soon.</p>
+            <button onclick="closeModal()"
+                class="bg-tertiary-container text-on-tertiary-container font-headline text-xl px-8 py-3 wobbly-border scribble-shadow scribble-shadow-hover transition-all font-bold uppercase inline-block">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form.contact_form');
+        const modal = document.getElementById('successModal');
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const submitButton = form.querySelector('button[type="submit"]');
+                const originalText = submitButton.innerText;
+
+                submitButton.innerText = 'SENDING...';
+                submitButton.disabled = true;
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        modal.classList.remove('hidden');
+                        form.reset();
+                    } else {
+                        alert('Oops! There was a problem submitting your message.');
+                    }
+                } catch (error) {
+                    alert('Oops! Network error submitting your message.');
+                } finally {
+                    submitButton.innerText = originalText;
+                    submitButton.disabled = false;
+                }
+            });
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
